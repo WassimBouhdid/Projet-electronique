@@ -1,0 +1,134 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC18F458
+CCSVerions=5.101d-Prelim-01/22/21
+Compiler=PCH
+CCSVersion=5.101Pd
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\labo-pc\Documents\Simulation_elec\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=4
+D1=12-03-2021
+D1_L=66
+D1_L1=[33158]Project Opened.
+D1_L2=[33173]Project Closed.
+D1_L3=[33283]Project Opened.
+D1_L4=[33503]Started Editing.
+D1_L5=[34791]Stopped Editing.
+D1_L6=[34857]Started Editing.
+D1_L7=[37397]Stopped Editing.
+D1_L8=[37487]Started Editing.
+D1_L9=[37792]Stopped Editing.
+TotalEdit=128
+TotalDebug=0
+D1_E=113
+D1_D=0
+D1_L10=[37812]Project Closed.
+D1_L11=[37812]Project Opened.
+D1_L12=[37828]Started Editing.
+D1_L13=[38128]Stopped Editing.
+D1_L14=[38505]Project Closed.
+D1_L15=[41362]Project Opened.
+D1_L16=[41375]Project Closed.
+D1_L17=[41375]Project Opened.
+D1_L18=[41659]Started Editing.
+D1_L19=[41758]Stopped Editing.
+D1_L20=[41758]Project Closed.
+D1_L21=[42242]Project Opened.
+D1_L22=[42372]Project Closed.
+D1_L23=[42373]Project Opened.
+D1_L24=[42444]Started Editing.
+D1_L25=[42747]Stopped Editing.
+D1_L26=[42820]Project Closed.
+D1_L27=[43500]Project Opened.
+D1_L28=[43511]Project Closed.
+D1_L29=[43511]Project Opened.
+D1_L30=[44289]Project Closed.
+D1_L31=[44298]Project Opened.
+D1_L32=[44315]Project Closed.
+D1_L33=[55809]Project Opened.
+D1_L34=[55824]Project Closed.
+D1_L35=[55824]Project Opened.
+D1_L36=[56224]Started Editing.
+D1_L37=[56311]Stopped Editing.
+D1_L38=[56311]Project Closed.
+D1_L39=[56535]Project Opened.
+D1_L40=[56558]Project Closed.
+D1_L41=[56558]Project Opened.
+D1_L42=[56564]Started Editing.
+D1_L43=[56871]Stopped Editing.
+D1_L44=[56881]Started Editing.
+D1_L45=[58015]Stopped Editing.
+D1_L46=[58015]Project Closed.
+D1_L47=[58105]Project Opened.
+D1_L48=[58116]Project Closed.
+D1_L49=[58116]Project Opened.
+D1_L50=[58136]Started Editing.
+D1_L51=[59975]Stopped Editing.
+D1_L52=[60399]Started Editing.
+D1_L53=[60782]Stopped Editing.
+D1_L54=[60886]Project Closed.
+D1_L55=[60899]Project Opened.
+D1_L56=[60908]Project Closed.
+D1_L57=[60908]Project Opened.
+D1_L58=[61282]Started Editing.
+D1_L59=[61873]Stopped Editing.
+D1_L60=[63963]Started Editing.
+D1_L61=[64264]Stopped Editing.
+D1_L62=[65645]Started Editing.
+D1_L63=[65946]Stopped Editing.
+D1_L64=[65965]Project Closed.
+D1_L65=[80180]Project Opened.
+D1_L66=[80750]Project Closed.
+D2=23-04-2021
+D2_L=10
+D2_L1=[65032]Project Opened.
+D2_L2=[65043]Started Editing.
+D2_L3=[66203]Stopped Editing.
+D2_L4=[66618]Started Editing.
+D2_L5=[66928]Stopped Editing.
+D2_L6=[66978]Started Editing.
+D2_L7=[67285]Stopped Editing.
+D2_E=15
+D2_D=0
+D2_L8=[67353]Project Closed.
+D2_L9=[67760]Project Opened.
+D2_L10=[69839]Project Closed.
+D3=03-05-2021
+D3_L=3
+D3_L1=[54628]Project Opened.
+D3_L2=[55702]Started Editing.
+D3_L3=[56007]Stopped Editing.
+D4=05-05-2021
+D4_L=6
+D4_L1=[58338]Project Opened.
+D4_L2=[58498]Started Editing.
+D4_L3=[58803]Stopped Editing.
+D4_L4=[60624]Started Editing.
+D4_L5=[60878]Project Opened.
+D4_L6=[61827]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=31
+Count=2
+2=main.h
+t2=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=55
+[Units]
+Count=1
+1=main (main)

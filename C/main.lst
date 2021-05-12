@@ -1,0 +1,355 @@
+CCS PCH C Compiler, Version 5.101Pd, 1               05-mai-21 16:15
+Compiler operating in Evaluation Mode
+To obtain a fully enabled compiler visit www.ccsinfo.com/products
+
+               Filename:   C:\Users\Nolf Simon\Downloads\projet_main\projet_main\main.lst
+
+               ROM used:   528 bytes (2%)
+                           Largest free fragment is 32236
+               RAM used:   31 (2%) at main() level
+                           33 (2%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   0152
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  FF5,15
+003C:  MOVFF  FF6,16
+0040:  MOVFF  FF7,17
+0044:  MOVFF  00,0E
+0048:  MOVFF  01,0F
+004C:  MOVFF  02,10
+0050:  MOVFF  03,11
+0054:  BTFSS  FF2.4
+0056:  GOTO   0060
+005A:  BTFSC  FF2.1
+005C:  GOTO   00C6
+0060:  BTFSS  FF0.3
+0062:  GOTO   006C
+0066:  BTFSC  FF0.0
+0068:  GOTO   00CE
+006C:  BTFSS  F9D.5
+006E:  GOTO   0078
+0072:  BTFSC  F9E.5
+0074:  GOTO   011E
+0078:  MOVFF  0E,00
+007C:  MOVFF  0F,01
+0080:  MOVFF  10,02
+0084:  MOVFF  11,03
+0088:  MOVFF  0C,FE9
+008C:  MOVFF  07,FEA
+0090:  BSF    07.7
+0092:  MOVFF  08,FE1
+0096:  MOVFF  09,FE2
+009A:  MOVFF  0A,FD9
+009E:  MOVFF  0B,FDA
+00A2:  MOVFF  12,FF3
+00A6:  MOVFF  13,FF4
+00AA:  MOVFF  14,FFA
+00AE:  MOVFF  15,FF5
+00B2:  MOVFF  16,FF6
+00B6:  MOVFF  17,FF7
+00BA:  MOVF   04,W
+00BC:  MOVFF  06,FE0
+00C0:  MOVFF  05,FD8
+00C4:  RETFIE 0
+.................... #include <main.h>
+.................... #include <18F458.h>
+.................... //////////// Standard Header file for the PIC18F458 device ////////////////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... ////        (C) Copyright 1996, 2020 Custom Computer Services          ////
+.................... //// This source code may only be used by licensed users of the CCS C  ////
+.................... //// compiler.  This source code may only be distributed to other      ////
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction ////
+.................... //// or distribution is permitted without written permission.          ////
+.................... //// Derivative programs created using this software in object code    ////
+.................... //// form are not restricted in any way.                               ////
+.................... ///////////////////////////////////////////////////////////////////////////
+.................... #device PIC18F458
+.................... 
+.................... #list
+.................... 
+.................... #device ADC=10
+.................... 
+.................... #FUSES NOWDT                    //No Watch Dog Timer
+.................... 
+.................... #use delay(crystal=20000000)
+*
+012C:  CLRF   FEA
+012E:  MOVLW  1F
+0130:  MOVWF  FE9
+0132:  MOVF   FEF,W
+0134:  BZ    0150
+0136:  MOVLW  06
+0138:  MOVWF  01
+013A:  CLRF   00
+013C:  DECFSZ 00,F
+013E:  BRA    013C
+0140:  DECFSZ 01,F
+0142:  BRA    013A
+0144:  MOVLW  7B
+0146:  MOVWF  00
+0148:  DECFSZ 00,F
+014A:  BRA    0148
+014C:  DECFSZ FEF,F
+014E:  BRA    0136
+0150:  RETURN 0
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8,stream=PORT1,FORCE_SW)
+*
+00D6:  BSF    F94.7
+00D8:  BTFSC  F82.7
+00DA:  BRA    00D8
+00DC:  MOVLW  08
+00DE:  MOVWF  00
+00E0:  CLRF   20
+00E2:  BSF    00.7
+00E4:  BRA    0102
+00E6:  BCF    00.7
+00E8:  BRA    0102
+00EA:  BCF    FD8.0
+00EC:  BTFSC  F82.7
+00EE:  BSF    FD8.0
+00F0:  RRCF   20,F
+00F2:  BSF    00.6
+00F4:  BRA    0102
+00F6:  BCF    00.6
+00F8:  DECFSZ 00,F
+00FA:  BRA    00EA
+00FC:  MOVFF  20,01
+0100:  BRA    011A
+0102:  MOVLW  A7
+0104:  BTFSC  00.7
+0106:  MOVLW  2D
+0108:  MOVWF  01
+010A:  DECFSZ 01,F
+010C:  BRA    010A
+010E:  NOP   
+0110:  BTFSC  00.7
+0112:  BRA    00E6
+0114:  BTFSC  00.6
+0116:  BRA    00F6
+0118:  BRA    00EA
+011A:  GOTO   0120 (RETURN)
+.................... 
+.................... 
+.................... 
+.................... int numb_inside=9;
+.................... int dizaine=0;
+.................... int limit = 5;
+.................... 
+.................... boolean flag_RB0=0;
+.................... boolean flag_RB1=0;
+.................... boolean flag_RDA=0;
+.................... 
+.................... int buffer[1];
+.................... 
+.................... #INT_EXT
+.................... void  EXT_isr(void) 
+.................... {
+....................    flag_RB0=1;
+*
+00C6:  BSF    1C.0
+.................... }
+.................... 
+00C8:  BCF    FF2.1
+00CA:  GOTO   0078
+.................... #INT_EXT1
+.................... void  EXT1_isr(void) 
+.................... {
+....................    flag_RB1=1;
+00CE:  BSF    1C.1
+.................... }
+.................... 
+00D0:  BCF    FF0.0
+00D2:  GOTO   0078
+.................... #INT_RDA
+.................... void  RDA_isr(void) 
+.................... {
+....................    buffer[0]=getc();
+*
+011E:  BRA    00D6
+0120:  MOVFF  01,1D
+....................    flag_RDA=1;
+0124:  BSF    1C.2
+0126:  BCF    F9E.5
+0128:  GOTO   0078
+.................... }
+.................... 
+.................... void main()
+*
+0152:  CLRF   FF8
+0154:  BCF    FD0.7
+0156:  BSF    07.7
+0158:  BCF    F94.6
+015A:  BSF    F8B.6
+015C:  MOVLW  09
+015E:  MOVWF  19
+0160:  CLRF   1A
+0162:  MOVLW  05
+0164:  MOVWF  1B
+0166:  BCF    1C.0
+0168:  BCF    1C.1
+016A:  BCF    1C.2
+016C:  BSF    FC1.0
+016E:  BSF    FC1.1
+0170:  BSF    FC1.2
+0172:  BCF    FC1.3
+0174:  MOVLW  07
+0176:  MOVWF  FB4
+.................... {
+.................... 
+....................    enable_interrupts(INT_EXT);
+0178:  BSF    FF2.4
+....................    enable_interrupts(INT_EXT1);
+017A:  BSF    FF0.3
+....................    enable_interrupts(INT_RDA);
+017C:  BSF    F9D.5
+....................    enable_interrupts(GLOBAL);
+017E:  MOVLW  C0
+0180:  IORWF  FF2,F
+....................    setup_low_volt_detect(FALSE);
+0182:  CLRF   FD2
+.................... 
+....................    while(TRUE)
+....................    {
+....................       if(flag_RDA){
+0184:  BTFSS  1C.2
+0186:  BRA    0192
+.................... 
+....................          output_e(1);
+0188:  BCF    F96.0
+018A:  BCF    F96.1
+018C:  BCF    F96.2
+018E:  MOVLW  01
+0190:  MOVWF  F8D
+....................       }
+....................       
+....................       int val=numb_inside+dizaine*16;
+0192:  MOVF   1A,W
+0194:  MULLW  10
+0196:  MOVF   FF3,W
+0198:  ADDWF  19,W
+019A:  MOVWF  1E
+....................       output_d(val);
+019C:  CLRF   F95
+019E:  MOVFF  1E,F8C
+....................       
+....................       if( limit<val){
+01A2:  MOVF   1E,W
+01A4:  SUBWF  1B,W
+01A6:  BC    01C6
+....................          output_e(2);
+01A8:  BCF    F96.0
+01AA:  BCF    F96.1
+01AC:  BCF    F96.2
+01AE:  MOVLW  02
+01B0:  MOVWF  F8D
+....................          delay_ms(250);
+01B2:  MOVLW  FA
+01B4:  MOVWF  1F
+01B6:  RCALL  012C
+....................          output_e(0);
+01B8:  BCF    F96.0
+01BA:  BCF    F96.1
+01BC:  BCF    F96.2
+01BE:  CLRF   F8D
+....................          delay_ms(250);
+01C0:  MOVLW  FA
+01C2:  MOVWF  1F
+01C4:  RCALL  012C
+....................       }
+....................       
+....................       if(limit>=val){
+01C6:  MOVF   1E,W
+01C8:  SUBWF  1B,W
+01CA:  BNC   01D6
+....................          output_e(1);
+01CC:  BCF    F96.0
+01CE:  BCF    F96.1
+01D0:  BCF    F96.2
+01D2:  MOVLW  01
+01D4:  MOVWF  F8D
+....................       }
+....................       
+....................       if (flag_RB0){
+01D6:  BTFSS  1C.0
+01D8:  BRA    01EC
+....................          if( numb_inside == 9 ){
+01DA:  MOVF   19,W
+01DC:  SUBLW  09
+01DE:  BNZ   01E6
+....................             numb_inside=0;
+01E0:  CLRF   19
+....................             dizaine++;
+01E2:  INCF   1A,F
+....................          }
+01E4:  BRA    01E8
+....................          else{
+....................             numb_inside++;
+01E6:  INCF   19,F
+....................          }
+....................          flag_RB0=0;
+01E8:  BCF    1C.0
+....................       }
+01EA:  BRA    0210
+....................       else if(flag_RB1){
+01EC:  BTFSS  1C.1
+01EE:  BRA    0210
+....................          if(numb_inside == 0 && dizaine>0){
+01F0:  MOVF   19,F
+01F2:  BNZ   0200
+01F4:  MOVF   1A,F
+01F6:  BZ    0200
+....................             numb_inside=9;
+01F8:  MOVLW  09
+01FA:  MOVWF  19
+....................             dizaine--;
+01FC:  DECF   1A,F
+....................          }
+01FE:  BRA    020E
+....................          else if(numb_inside == 0 && dizaine==0){
+0200:  MOVF   19,F
+0202:  BNZ   020C
+0204:  MOVF   1A,F
+0206:  BNZ   020C
+....................             continue;
+0208:  BRA    0184
+....................          }
+020A:  BRA    020E
+....................          else{
+....................             numb_inside--;
+020C:  DECF   19,F
+....................          }
+....................          flag_RB1=0;
+020E:  BCF    1C.1
+....................          
+....................       }
+0210:  BRA    0184
+....................       
+....................    }
+.................... 
+.................... }
+0212:  SLEEP 
+
+Configuration Fuses:
+   Word  1: 2200   HS NOOSCSEN
+   Word  2: 0E0E   PUT BROWNOUT BORV25 NOWDT WDT128
+   Word  3: 0000  
+   Word  4: 0081   STVREN NOLVP NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
