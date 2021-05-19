@@ -1,6 +1,9 @@
 #include <main.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int numb_inside=9;
+int numb_inside=4;
 int dizaine=0;
 int limit = 5;
 
@@ -8,7 +11,7 @@ boolean flag_RB0=0;
 boolean flag_RB1=0;
 boolean flag_RDA=0;
 
-int buffer[1];
+char buffer[4];
 
 #INT_EXT
 void  EXT_isr(void) 
@@ -25,7 +28,7 @@ void  EXT1_isr(void)
 #INT_RDA
 void  RDA_isr(void) 
 {
-   buffer[0]=getc();
+   buffer[0] = getc();
    flag_RDA=1;
 }
 
@@ -38,11 +41,12 @@ void main()
    enable_interrupts(GLOBAL);
    setup_low_volt_detect(FALSE);
 
-   while(TRUE)
-   {
+   for(;;){
+
       if(flag_RDA){
 
-         output_e(1);
+         flag_RDA = 0;
+         limit = atoi(buffer);
       }
       
       int val=numb_inside+dizaine*16;
@@ -81,9 +85,7 @@ void main()
             numb_inside--;
          }
          flag_RB1=0;
-         
       }
-      
    }
-
 }
+

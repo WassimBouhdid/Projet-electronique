@@ -1,10 +1,11 @@
 ÀÄmain
-   ÃÄMAIN  0/194  Ram=1
+   ÃÄMAIN  0/210  Ram=1
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄ@cinit2  (Inline)  Ram=0
+   ³  ÃÄatoi  0/396  Ram=9
+   ³  ³  ÀÄ@MUL88  0/76  Ram=2
    ³  ÃÄ@delay_ms1  0/38  Ram=1
    ³  ÀÄ@delay_ms1  0/38  Ram=1
    ÃÄEXT_isr  0/8  Ram=0
    ÃÄEXT1_isr  0/8  Ram=0
-   ÀÄRDA_isr  0/14  Ram=0
-      ÀÄ@GETCH_1_  0/72  Ram=1
+   ÀÄRDA_isr  0/16  Ram=0

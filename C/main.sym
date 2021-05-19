@@ -24,58 +24,77 @@
 016     @INTERRUPT_AREA
 017     @INTERRUPT_AREA
 018     @INTERRUPT_AREA
-019     numb_inside
-01A     dizaine
-01B     limit
-01C.0   flag_RB0
-01C.1   flag_RB1
-01C.2   flag_RDA
-01D     buffer
-01E     MAIN.val
-01F     @delay_ms1.P1
-020     @GETCH_1_.@SCRATCH1
+019-01A strtok.save
+01B-01E _Randseed
+01F     numb_inside
+020     dizaine
+021     limit
+022.0   flag_RB0
+022.1   flag_RB1
+022.2   flag_RDA
+023-026 buffer
+027     MAIN.val
+028-029 atoi.s
+028     @delay_ms1.P1
+02A     atoi.result
+02B     atoi.sign
+02C     atoi.base
+02D     atoi.index
+02E     atoi.c
+02F     @MUL88.P1
+02F     atoi.@SCRATCH1
+030     @MUL88.P1
+030     atoi.@SCRATCH2
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
 FBB     CCP_2_LOW
 FBB     CCP_2
 FBC     CCP_2_HIGH
-FBE     CCP_1
 FBE     CCP_1_LOW
+FBE     CCP_1
 FBF     CCP_1_HIGH
 FE1-FE2 @WRITE_PACKED_MEMORY.P1
 FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PROGRAM_MEMORY.P1
-FE9-FEA @READ_PACKED_MEMORY.P2
-FE9-FEA @READ_PROGRAM_MEMORY.P3
-FE9-FEA @WRITE_PACKED_MEMORY.P4
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
 FF6-FF8 @READ_PROGRAM_MEMORY.P1
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
 ROM Allocation:
 0000C6  EXT_isr
 0000CE  EXT1_isr
-0000D6  @GETCH_1_
-00011E  RDA_isr
-00012C  @delay_ms1
-000152  @cinit1
-000152  MAIN
-000178  @cinit2
+0000D6  RDA_isr
+0000E6  @MUL88
+000132  atoi
+0002BE  @delay_ms1
+0002E4  MAIN
+0002E4  @cinit1
+000312  @cinit2
+0135  StrtoulGO
+0135  StrtolGO
 
 Project Directory:
-    C:\Users\Nolf Simon\Downloads\projet_main\projet_main\
+    C:\Users\Nolf Simon\Desktop\EPHEC\
 
 Project Files:
-    main.c                                                  [03-mai-21 15:01  CRC=48AAE219]
-    main.h                                                  [05-mai-21 16:15  CRC=D872A938]
-    ..\..\..\..\..\Program Files (x86)\PICC\Devices\18F458.h [22-janv.-21 10:40  CRC=D5A7E9F2]
+    main.c                                                  [07-mai-21 16:36  CRC=17CCEDD2]
+    main.h                                                  [07-mai-21 16:05  CRC=D872A938]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\18F458.h   [22-janv.-21 10:40  CRC=D5A7E9F2]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\stdio.h    [31-juil.-07 14:24  CRC=4E4534F4]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\string.h   [06-avr.-20 07:43  CRC=B1605627]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h   [30-janv.-19 11:26  CRC=897CEC6C]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h    [03-janv.-08 14:55  CRC=2D1F019F]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h   [30-juin-20 13:21  CRC=452E14BB]
 
-Source signature=CC6D5F35
+Source signature=06852398
 Program memory checksum=0000
-Hex file CRC=3FFF
+Hex file CRC=2105
 
 Units:
-    C:\Users\Nolf Simon\Downloads\projet_main\projet_main\main (main)
+    C:\Users\Nolf Simon\Desktop\EPHEC\main (main)
 
 Compiler Settings:
     Processor:      PIC18F458
