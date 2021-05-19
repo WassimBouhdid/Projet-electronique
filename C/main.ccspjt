@@ -1,0 +1,40 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC18F458
+CCSVerions=5.101d-Prelim-01/22/21
+Compiler=PCH
+CCSVersion=5.101Pd
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Nolf Simon\Desktop\EPHEC\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=07-05-2021
+D1_L=3
+D1_L1=[57804]Project Opened.
+D1_L2=[57853]Started Editing.
+D1_L3=[60108]Stopped Editing.
+
+[Opened Files]
+1=main.c
+t1=25
+2=main.h
+t2=1
+Count=2
+[main.c]
+Type=4
+
+[defines]
+buildcount=9
+[Units]
+Count=1
+1=main (main)

@@ -1,0 +1,66 @@
+
+ROM used: 952 (3%)
+          952 (3%) including unused fragments
+
+          1 Average locations per line
+          2 Average locations per statement
+
+RAM used: 40 (3%) at main() level
+          49 (3%) worst case
+
+Stack used: 3 worst case (out of 30 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   93    47  11  main.c
+   10     0   0  main.h
+  389     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F458.h
+   37     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h
+  417     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+   28     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+   28     0   0  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+  874   389  89  ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h
+----- -----
+ 1876   436 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     38   2   1             @delay_ms1
+0     76   4   2             @MUL88
+0    412  22   9  1805 10.5  atoi
+0      8   0   0    22  1.2  EXT_isr
+0      8   0   0    22  1.2  EXT1_isr
+0     16   1   0    52  1.9  RDA_isr
+0    216  11   1  1017  8.2  MAIN
+
+Program metrics:
+    Functions               5
+    Statements              436
+    Comments                475
+    Volume (V)              3532
+    Difficilty (D)          24.2
+    Effort to implement (E) 85419
+    Time to implement (T)   1 hours, 19 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   18
+    Maintainability (MI)    92
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000B4   174  0  
+000B6-07FFE   774  31812  
+
+
+
+THE FOLLOWING IS TEMPORARY FOR DIAGNOSTIC USE ONLY:
+
+    n1    n2    N1    N2   v(G)
+     0     1     0     0     0    @delay_ms1
+     0     1     0     0     0    @MUL88
+    21   109   148   109     9    atoi
+     4     5     4     3     0    EXT_isr
+     4     5     4     3     0    EXT1_isr
+     5     8     8     6     0    RDA_isr
+    17    65    97    63     9    MAIN
