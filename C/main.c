@@ -11,7 +11,7 @@ boolean flag_RB0=0;
 boolean flag_RB1=0;
 boolean flag_RDA=0;
 
-char buffer[4];
+char buffer[5];
 
 #INT_EXT
 void  EXT_isr(void) 
@@ -34,6 +34,7 @@ void  RDA_isr(void)
 
 void main()
 {
+int val = 0;
 
    enable_interrupts(INT_EXT);
    enable_interrupts(INT_EXT1);
@@ -49,7 +50,7 @@ void main()
          limit = atoi(buffer);
       }
       
-      int val=numb_inside+dizaine*16;
+       val=numb_inside+dizaine*16;
       output_d(val);
       
       if( limit<val){

@@ -1,0 +1,40 @@
+[PROJECT]
+Target=main.HEX
+Development_Mode=2
+Processor=0x8458
+ToolSuite=CCS
+Processor_Text=PIC18F458
+
+[Directories]
+Include=
+Library=
+LinkerScript=
+
+[Target Data]
+FileList=C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.c
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+
+[main.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=main.c
+
+[Windows]
+0=0000 main.c 0 0 796 451 3 0
+
+[Opened Files]
+1=C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.c
+2=
+[Units]
+Count=1
+1=main.c (main)
+Link=0

@@ -3,7 +3,7 @@
 001     _RETURN_
 002     @SCRATCH
 003     @SCRATCH
-004     @INTERRUPT_AREA
+004     @SCRATCH
 005     @INTERRUPT_AREA
 006     @INTERRUPT_AREA
 007     @INTERRUPT_AREA
@@ -23,16 +23,15 @@
 015     @INTERRUPT_AREA
 016     @INTERRUPT_AREA
 017     @INTERRUPT_AREA
-018     @INTERRUPT_AREA
-019-01A strtok.save
-01B-01E _Randseed
-01F     numb_inside
-020     dizaine
-021     limit
-022.0   flag_RB0
-022.1   flag_RB1
-022.2   flag_RDA
-023-026 buffer
+018-019 strtok.save
+01A-01D _Randseed
+01E     numb_inside
+01F     dizaine
+020     limit
+021.0   flag_RB0
+021.1   flag_RB1
+021.2   flag_RDA
+022-026 buffer
 027     MAIN.val
 028-029 atoi.s
 028     @delay_ms1.P1
@@ -42,80 +41,58 @@
 02D     atoi.index
 02E     atoi.c
 02F     @MUL88.P1
-02F     atoi.@SCRATCH1
+02F     atoi.@SCRATCH
 030     @MUL88.P1
-030     atoi.@SCRATCH2
+030     atoi.@SCRATCH
 F83     PSP_DATA
 FB4.6   C1OUT
 FB4.7   C2OUT
 FBB     CCP_2_LOW
-FBB     CCP_2
+FBB-FBC CCP_2
 FBC     CCP_2_HIGH
 FBE     CCP_1_LOW
-FBE     CCP_1
+FBE-FBF CCP_1
 FBF     CCP_1_HIGH
-FE1-FE2 @WRITE_PACKED_MEMORY.P1
-FE1-FE2 @READ_PACKED_MEMORY.P2
-FE9-FEA @WRITE_PACKED_MEMORY.P1
-FE9-FEA @READ_PROGRAM_MEMORY.P2
-FE9-FEA @READ_PACKED_MEMORY.P3
-FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
 FF6-FF8 @READ_PROGRAM_MEMORY.P1
 FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
 
-ROM Allocation:
-0000C6  EXT_isr
-0000CE  EXT1_isr
-0000D6  RDA_isr
-0000E6  @MUL88
-000132  atoi
-0002BE  @delay_ms1
-0002E4  MAIN
-0002E4  @cinit1
-000312  @cinit2
-0135  StrtoulGO
-0135  StrtolGO
-
-Project Directory:
-    C:\Users\Nolf Simon\Desktop\EPHEC\
+02BE  @delay_ms1
+00D6  @MUL88
+0122  atoi
+00B6  EXT_isr
+00BE  EXT1_isr
+00C6  RDA_isr
+02E4  MAIN
+02E4  @cinit
 
 Project Files:
-    main.c                                                  [07-mai-21 16:36  CRC=17CCEDD2]
-    main.h                                                  [07-mai-21 16:05  CRC=D872A938]
-    ..\..\..\..\Program Files (x86)\PICC\Devices\18F458.h   [22-janv.-21 10:40  CRC=D5A7E9F2]
-    ..\..\..\..\Program Files (x86)\PICC\Drivers\stdio.h    [31-juil.-07 14:24  CRC=4E4534F4]
-    ..\..\..\..\Program Files (x86)\PICC\Drivers\string.h   [06-avr.-20 07:43  CRC=B1605627]
-    ..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h   [30-janv.-19 11:26  CRC=897CEC6C]
-    ..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h    [03-janv.-08 14:55  CRC=2D1F019F]
-    ..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h   [30-juin-20 13:21  CRC=452E14BB]
-
-Source signature=06852398
-Program memory checksum=0000
-Hex file CRC=2105
+    main.c
+    main.h
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F458.h
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h
 
 Units:
-    C:\Users\Nolf Simon\Desktop\EPHEC\main (main)
+    C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.c (main)
 
 Compiler Settings:
     Processor:      PIC18F458
     Pointer Size:   16
     ADC Range:      0-1023
-    Opt Level:      9
-    Short,Int,Long: UNSIGNED: 1,8,16
-    Float,Double:   32,32
-    Compile Mode:   CCS5
-
-Compiler operating in Evaluation Mode
-To obtain a fully enabled compiler visit www.ccsinfo.com/products
+    Opt Level:      0
+    Short,Int,Long: 1,8,16
 
 Output Files:
-    XREF file:   main.xsym
-    Errors:      main.err
-    Ext Symbols: main.esym
-    INHX32:      main.hex
-    Symbols:     main.sym
-    List:        main.lst
-    Debug/COFF:  main.cof
-    Project:     main.ccspjt
+    Errors:      C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.err
+    Ext Symbols: C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.esym
+    INHX32:      C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.hex
+    Symbols:     C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.sym
+    List:        C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.lst
+    Debug/COFF:  C:\Users\Nolf Simon\Desktop\EPHEC\2020-2021\Q2\test elec\Projet-electronique\C\main.cof
     Call Tree:   main.tre
-    Statistics:  main.STA
+    Statistics:  main.sta
